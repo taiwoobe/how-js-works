@@ -1,10 +1,20 @@
 ///////////////////////////////////////
 // Lecture: Hoisting
 
+
+// Hoisting with function declaration works perfect and the result is correct. 
 calculateAge(1967);
 
 function calculateAge(year) {
     console.log(2016 - year);
+}
+
+
+// The below code wont run because hoisting in functions only works with function declaration and not function expressions.
+retirement(1976);
+
+var retirement = function(year) {
+    console.log(65 - (2016 - year));
 }
 
 
