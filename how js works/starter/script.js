@@ -11,11 +11,26 @@ function calculateAge(year) {
 
 
 // The below code wont run because hoisting in functions only works with function declaration and not function expressions.
-retirement(1976);
+// retirement(1976);
 
-var retirement = function(year) {
-    console.log(65 - (2016 - year));
+// var retirement = function(year) {
+//     console.log(65 - (2016 - year));
+// }
+
+
+// The first console log here gives us undefined which is expected.
+// Age in line 26 is in the global context variable object 
+// Console log in line 30 gives 65 because its in the context variable object of the local function scope
+// console log in line 33 gives 24 as that is also in the global context object as declared in line 26
+console.log(age);
+var age = 24;
+
+function foo() {
+    var age = 65;
+    console.log(age);
 }
+foo();
+console.log(age);
 
 
 
